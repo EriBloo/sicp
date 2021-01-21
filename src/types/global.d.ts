@@ -12,3 +12,10 @@ declare type Segment = {
   start: Point;
   end: Point;
 };
+
+declare type Rectangle = {
+  a: Point;
+  b: Point;
+  c: Point;
+  d: Point;
+};

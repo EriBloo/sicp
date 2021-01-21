@@ -122,4 +122,20 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+  // console.log(
+  //   chapterTwo.perimeter(
+  //     chapterTwo.makeRectangle(
+  //       chapterTwo.makePoint(1, 1),
+  //       chapterTwo.makePoint(3, 3),
+  //     ),
+  //   ),
+  // );
+  // console.log(
+  //   chapterTwo.area(
+  //     chapterTwo.makeRectangle(
+  //       chapterTwo.makePoint(1, 1),
+  //       chapterTwo.makePoint(3, 3),
+  //     ),
+  //   ),
+  // );
 })();

@@ -131,5 +131,14 @@ var chapterTwo = __importStar(require("./chapterTwo"));
     //     ),
     //   ),
     // );
-    chapterTwo.printPoint(chapterTwo.midpointSegment(chapterTwo.makeSegment(chapterTwo.makePoint(-1, -1), chapterTwo.makePoint(-5, -5))));
+    // chapterTwo.printPoint(
+    //   chapterTwo.midpointSegment(
+    //     chapterTwo.makeSegment(
+    //       chapterTwo.makePoint(-1, -1),
+    //       chapterTwo.makePoint(-5, -5),
+    //     ),
+    //   ),
+    // );
+    console.log(chapterTwo.perimeter(chapterTwo.makeRectangle(chapterTwo.makePoint(1, 1), chapterTwo.makePoint(3, 3))));
+    console.log(chapterTwo.area(chapterTwo.makeRectangle(chapterTwo.makePoint(1, 1), chapterTwo.makePoint(3, 3))));
 })();
