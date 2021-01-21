@@ -58,8 +58,8 @@ exports.makeSegment = makeSegment;
 ;
 function midpointSegment(s) {
     return {
-        x: (s.end.x - s.start.x) / 2,
-        y: (s.end.y - s.start.y) / 2,
+        x: (s.end.x + s.start.x) / 2,
+        y: (s.end.y + s.start.y) / 2,
     };
 }
 exports.midpointSegment = midpointSegment;

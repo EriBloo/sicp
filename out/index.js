@@ -123,5 +123,13 @@ var chapterTwo = __importStar(require("./chapterTwo"));
     // chapterTwo.printRational(
     //   chapterTwo.subRational(oneThird, oneHalf),
     // );
-    chapterTwo.printPoint(chapterTwo.midpointSegment(chapterTwo.makeSegment(chapterTwo.makePoint(1, 1), chapterTwo.makePoint(5, 3))));
+    // chapterTwo.printPoint(
+    //   chapterTwo.midpointSegment(
+    //     chapterTwo.makeSegment(
+    //       chapterTwo.makePoint(1, 1),
+    //       chapterTwo.makePoint(5, 3),
+    //     ),
+    //   ),
+    // );
+    chapterTwo.printPoint(chapterTwo.midpointSegment(chapterTwo.makeSegment(chapterTwo.makePoint(-1, -1), chapterTwo.makePoint(-5, -5))));
 })();

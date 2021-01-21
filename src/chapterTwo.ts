@@ -58,8 +58,8 @@ export function makeSegment(start: Point, end: Point): Segment {
 
 export function midpointSegment(s: Segment): Point {
   return {
-    x: (s.end.x - s.start.x) / 2,
-    y: (s.end.y - s.start.y) / 2,
+    x: (s.end.x + s.start.x) / 2,
+    y: (s.end.y + s.start.y) / 2,
   };
 };
 

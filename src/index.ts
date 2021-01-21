@@ -114,4 +114,12 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+  // chapterTwo.printPoint(
+  //   chapterTwo.midpointSegment(
+  //     chapterTwo.makeSegment(
+  //       chapterTwo.makePoint(-1, -1),
+  //       chapterTwo.makePoint(-5, -5),
+  //     ),
+  //   ),
+  // );
 })();
