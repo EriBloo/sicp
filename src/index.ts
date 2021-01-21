@@ -87,25 +87,32 @@ import * as chapterTwo from './chapterTwo';
 (function chapterTwoExamples(): void {
   const oneHalf = chapterTwo.makeRational(1, 2);
   const oneThird = chapterTwo.makeRational(1, 3);
+  const consValue = chapterTwo.cons(6, 4);
 
   // chapterTwo.printRational(
   //   oneHalf,
   // );
+
   // chapterTwo.printRational(
   //   oneThird,
   // );
+
   // chapterTwo.printRational(
   //   chapterTwo.addRational(oneHalf, oneThird),
   // );
+
   // chapterTwo.printRational(
   //   chapterTwo.addRational(oneThird, oneThird),
   // );
+
   // chapterTwo.printRational(
   //   chapterTwo.mulRational(oneThird, oneHalf),
   // );
+
   // chapterTwo.printRational(
   //   chapterTwo.subRational(oneThird, oneHalf),
   // );
+
   // chapterTwo.printPoint(
   //   chapterTwo.midpointSegment(
   //     chapterTwo.makeSegment(
@@ -114,6 +121,7 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+  
   // chapterTwo.printPoint(
   //   chapterTwo.midpointSegment(
   //     chapterTwo.makeSegment(
@@ -122,6 +130,7 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+
   // console.log(
   //   chapterTwo.perimeter(
   //     chapterTwo.makeRectangle(
@@ -130,6 +139,7 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+
   // console.log(
   //   chapterTwo.area(
   //     chapterTwo.makeRectangle(
@@ -138,4 +148,8 @@ import * as chapterTwo from './chapterTwo';
   //     ),
   //   ),
   // );
+
+  // console.log(chapterTwo.cdr(consValue));
+
+  // console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(33, 12)))
 })();

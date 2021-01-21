@@ -105,6 +105,7 @@ var chapterTwo = __importStar(require("./chapterTwo"));
 (function chapterTwoExamples() {
     var oneHalf = chapterTwo.makeRational(1, 2);
     var oneThird = chapterTwo.makeRational(1, 3);
+    var consValue = chapterTwo.cons(6, 4);
     // chapterTwo.printRational(
     //   oneHalf,
     // );
@@ -139,6 +140,22 @@ var chapterTwo = __importStar(require("./chapterTwo"));
     //     ),
     //   ),
     // );
-    console.log(chapterTwo.perimeter(chapterTwo.makeRectangle(chapterTwo.makePoint(1, 1), chapterTwo.makePoint(3, 3))));
-    console.log(chapterTwo.area(chapterTwo.makeRectangle(chapterTwo.makePoint(1, 1), chapterTwo.makePoint(3, 3))));
+    // console.log(
+    //   chapterTwo.perimeter(
+    //     chapterTwo.makeRectangle(
+    //       chapterTwo.makePoint(1, 1),
+    //       chapterTwo.makePoint(3, 3),
+    //     ),
+    //   ),
+    // );
+    // console.log(
+    //   chapterTwo.area(
+    //     chapterTwo.makeRectangle(
+    //       chapterTwo.makePoint(1, 1),
+    //       chapterTwo.makePoint(3, 3),
+    //     ),
+    //   ),
+    // );
+    // console.log(chapterTwo.cdr(consValue));
+    console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(333, 1245)));
 })();

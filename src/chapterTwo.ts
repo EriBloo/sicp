@@ -82,3 +82,47 @@ export function area(r: Rectangle): number {
     segmentLength(makeSegment(r.a, r.b)) * segmentLength(makeSegment(r.a, r.d))
   );
 }
+
+export function cons(x: any, y: any) {
+  function dispatch(m: 0 | 1): typeof x | typeof y {
+    if (m === 0) {
+      return x;
+    } else if (m === 1) {
+      return y;
+    } else {
+      throw new Error('Argument must be 0 or 1');
+    }
+  }
+  return dispatch;
+}
+
+export function car(z: any): any {
+  return z(0);
+}
+
+export function cdr(z: any): any {
+  return z(1);
+}
+
+export function consWithProduct(x: number, y: number): number {
+  return Math.pow(2, x) * Math.pow(3, y);
+}
+
+export function zeroRemainderDivisions(
+  a: number,
+  b: number,
+  n: number = 0,
+): number {
+  if (a % b === 0) {
+    return zeroRemainderDivisions(a / b, b, n + 1);
+  }
+  return n;
+}
+
+export function carWithProduct(z: number) {
+  return zeroRemainderDivisions(z, 2);
+}
+
+export function cdrWithProduct(z: number) {
+  return zeroRemainderDivisions(z, 3);
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
+exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
 var chapterOne_1 = require("./chapterOne");
 function makeRational(n, d) {
     if (d === 0 && n !== 0) {
@@ -79,3 +79,46 @@ function area(r) {
     return (segmentLength(makeSegment(r.a, r.b)) * segmentLength(makeSegment(r.a, r.d)));
 }
 exports.area = area;
+function cons(x, y) {
+    function dispatch(m) {
+        if (m === 0) {
+            return x;
+        }
+        else if (m === 1) {
+            return y;
+        }
+        else {
+            throw new Error('Argument must be 0 or 1');
+        }
+    }
+    return dispatch;
+}
+exports.cons = cons;
+function car(z) {
+    return z(0);
+}
+exports.car = car;
+function cdr(z) {
+    return z(1);
+}
+exports.cdr = cdr;
+function consWithProduct(x, y) {
+    return Math.pow(2, x) * Math.pow(3, y);
+}
+exports.consWithProduct = consWithProduct;
+function zeroRemainderDivisions(a, b, n) {
+    if (n === void 0) { n = 0; }
+    if (a % b === 0) {
+        return zeroRemainderDivisions(a / b, b, n + 1);
+    }
+    return n;
+}
+exports.zeroRemainderDivisions = zeroRemainderDivisions;
+function carWithProduct(z) {
+    return zeroRemainderDivisions(z, 2);
+}
+exports.carWithProduct = carWithProduct;
+function cdrWithProduct(z) {
+    return zeroRemainderDivisions(z, 3);
+}
+exports.cdrWithProduct = cdrWithProduct;
