@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
+exports.add = exports.two = exports.one = exports.next = exports.zero = exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
 var chapterOne_1 = require("./chapterOne");
 function makeRational(n, d) {
     if (d === 0 && n !== 0) {
@@ -122,3 +122,19 @@ function cdrWithProduct(z) {
     return zeroRemainderDivisions(z, 3);
 }
 exports.cdrWithProduct = cdrWithProduct;
+var zero = function (f) { return function (x) { return x; }; };
+exports.zero = zero;
+function next(n) {
+    return function (f) { return function (x) { return f(n(f)(x)); }; };
+}
+exports.next = next;
+var one = function (f) { return function (x) { return f((function (f) { return function (x) { return x; }; })(f)(x)); }; };
+exports.one = one;
+var two = function (f) { return function (x) {
+    return f((function (f) { return function (x) { return f((function (f) { return function (x) { return x; }; })(f)(x)); }; })(f)(x));
+}; };
+exports.two = two;
+function add(n, m) {
+    return function (f) { return function (x) { return n(f)(m(f)(x)); }; };
+}
+exports.add = add;

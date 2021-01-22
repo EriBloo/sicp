@@ -126,3 +126,18 @@ export function carWithProduct(z: number) {
 export function cdrWithProduct(z: number) {
   return zeroRemainderDivisions(z, 3);
 }
+
+export const zero = (f: any) => (x: any) => x;
+
+export function next(n: any) {
+  return (f: any) => (x: any) => f(n(f)(x));
+}
+
+export const one = (f: any) => (x: any) => f(((f: any) => (x: any) => x)(f)(x));
+
+export const two = (f: any) => (x: any) =>
+  f(((f: any) => (x: any) => f(((f: any) => (x: any) => x)(f)(x)))(f)(x));
+
+export function add(n: any, m: any) {
+  return (f: any) => (x: any) => n(f)(m(f)(x));
+}

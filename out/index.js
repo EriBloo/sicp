@@ -157,5 +157,10 @@ var chapterTwo = __importStar(require("./chapterTwo"));
     //   ),
     // );
     // console.log(chapterTwo.cdr(consValue));
-    console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(333, 1245)));
+    // console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(33, 12)))
+    // console.log(chapterTwo.zero((x: any) => x + 1)(0))
+    // console.log(chapterTwo.next(chapterTwo.next(chapterTwo.zero))((x: any) => x + 1)(0))
+    // console.log(chapterTwo.one((x: any) => x + 1)(0))
+    // console.log(chapterTwo.two((x: any) => x + 1)(0))
+    console.log(chapterTwo.add(chapterTwo.two, chapterTwo.one)(function (x) { return x + 1; })(0));
 })();
