@@ -19,3 +19,8 @@ declare type Rectangle = {
   c: Point;
   d: Point;
 };
+
+declare type Interval = {
+  lower: number;
+  upper: number;
+};

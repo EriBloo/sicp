@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.add = exports.two = exports.one = exports.next = exports.zero = exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
+exports.percent = exports.makeCenterPercent = exports.width = exports.center = exports.makeCenterWidth = exports.subInterval = exports.divInterval = exports.mulInterval = exports.addInterval = exports.lowerBound = exports.upperBound = exports.makeInterval = exports.add = exports.two = exports.one = exports.next = exports.zero = exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
 var chapterOne_1 = require("./chapterOne");
 function makeRational(n, d) {
     if (d === 0 && n !== 0) {
@@ -138,3 +138,61 @@ function add(n, m) {
     return function (f) { return function (x) { return n(f)(m(f)(x)); }; };
 }
 exports.add = add;
+function makeInterval(a, b) {
+    if (a < b) {
+        return { lower: a, upper: b };
+    }
+    return { lower: b, upper: a };
+}
+exports.makeInterval = makeInterval;
+function upperBound(i) {
+    return i.upper;
+}
+exports.upperBound = upperBound;
+function lowerBound(i) {
+    return i.lower;
+}
+exports.lowerBound = lowerBound;
+function addInterval(x, y) {
+    return makeInterval(lowerBound(x) + lowerBound(y), upperBound(x) + upperBound(y));
+}
+exports.addInterval = addInterval;
+function mulInterval(x, y) {
+    var p1 = lowerBound(x) * lowerBound(y);
+    var p2 = lowerBound(x) * upperBound(y);
+    var p3 = upperBound(x) * lowerBound(y);
+    var p4 = upperBound(x) * upperBound(y);
+    return makeInterval(Math.min(p1, p2, p3, p4), Math.max(p1, p2, p3, p4));
+}
+exports.mulInterval = mulInterval;
+function divInterval(x, y) {
+    if (lowerBound(y) * upperBound(y) <= 0) {
+        throw new Error('Interval spans 0.');
+    }
+    return mulInterval(x, makeInterval(1 / upperBound(y), 1 / lowerBound(y)));
+}
+exports.divInterval = divInterval;
+function subInterval(x, y) {
+    return makeInterval(lowerBound(x) - upperBound(y), upperBound(x) - lowerBound(y));
+}
+exports.subInterval = subInterval;
+function makeCenterWidth(c, w) {
+    return makeInterval(c - w, c + w);
+}
+exports.makeCenterWidth = makeCenterWidth;
+function center(i) {
+    return (lowerBound(i) + upperBound(i)) / 2;
+}
+exports.center = center;
+function width(i) {
+    return (upperBound(i) - lowerBound(i)) / 2;
+}
+exports.width = width;
+function makeCenterPercent(c, p) {
+    return makeCenterWidth(c, (p / 100) * c);
+}
+exports.makeCenterPercent = makeCenterPercent;
+function percent(i) {
+    return (width(i) / center(i)) * 100;
+}
+exports.percent = percent;
