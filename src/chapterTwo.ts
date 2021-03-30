@@ -206,4 +206,17 @@ export function percent(i: Interval): number {
   return (width(i) / center(i)) * 100
 }
 
+export function list(...args: any): any {
+  return args.reverse().reduce((prev: any, curr: any) => cons(curr, prev), null);
+}
 
+export function printList(list: any): void {
+  let output = '';
+  let current = list;
+  while (current !== null) {
+    output += car(current);
+    output += ' ';
+    current = cdr(current);
+  }
+  console.log(`(${output.slice(0, -1)})`);
+}

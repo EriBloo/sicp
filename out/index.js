@@ -157,13 +157,18 @@ var chapterTwo = __importStar(require("./chapterTwo"));
     //   ),
     // );
     // console.log(chapterTwo.cdr(consValue));
-    // console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(33, 12)))
-    // console.log(chapterTwo.zero((x: any) => x + 1)(0))
-    // console.log(chapterTwo.next(chapterTwo.next(chapterTwo.zero))((x: any) => x + 1)(0))
-    // console.log(chapterTwo.one((x: any) => x + 1)(0))
-    // console.log(chapterTwo.two((x: any) => x + 1)(0))
-    // console.log(chapterTwo.add(chapterTwo.two, chapterTwo.one)((x: any) => x + 1)(0))
-    console.log(chapterTwo.makeCenterWidth(10, 1));
-    console.log(chapterTwo.makeCenterPercent(10, 10));
-    console.log(chapterTwo.percent(chapterTwo.makeCenterWidth(10, 1)));
+    // console.log(chapterTwo.carWithProduct(chapterTwo.consWithProduct(33, 12)));
+    // console.log(chapterTwo.zero((x: any) => x + 1)(0));
+    // console.log(
+    //   chapterTwo.next(chapterTwo.next(chapterTwo.zero))((x: any) => x + 1)(0),
+    // );
+    // console.log(chapterTwo.one((x: any) => x + 1)(0));
+    // console.log(chapterTwo.two((x: any) => x + 1)(0));
+    // console.log(
+    //   chapterTwo.add(chapterTwo.two, chapterTwo.one)((x: any) => x + 1)(0),
+    // );
+    // console.log(chapterTwo.makeCenterWidth(10, 1));
+    // console.log(chapterTwo.makeCenterPercent(10, 10));
+    // console.log(chapterTwo.percent(chapterTwo.makeCenterWidth(10, 1)));
+    chapterTwo.printList(chapterTwo.list(1, 2, 3, 4));
 })();

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.percent = exports.makeCenterPercent = exports.width = exports.center = exports.makeCenterWidth = exports.subInterval = exports.divInterval = exports.mulInterval = exports.addInterval = exports.lowerBound = exports.upperBound = exports.makeInterval = exports.add = exports.two = exports.one = exports.next = exports.zero = exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
+exports.printList = exports.list = exports.percent = exports.makeCenterPercent = exports.width = exports.center = exports.makeCenterWidth = exports.subInterval = exports.divInterval = exports.mulInterval = exports.addInterval = exports.lowerBound = exports.upperBound = exports.makeInterval = exports.add = exports.two = exports.one = exports.next = exports.zero = exports.cdrWithProduct = exports.carWithProduct = exports.zeroRemainderDivisions = exports.consWithProduct = exports.cdr = exports.car = exports.cons = exports.area = exports.perimeter = exports.segmentLength = exports.makeRectangle = exports.printPoint = exports.midpointSegment = exports.makeSegment = exports.makePoint = exports.printRational = exports.equalRational = exports.divRational = exports.mulRational = exports.subRational = exports.addRational = exports.makeRational = void 0;
 var chapterOne_1 = require("./chapterOne");
 function makeRational(n, d) {
     if (d === 0 && n !== 0) {
@@ -196,3 +196,22 @@ function percent(i) {
     return (width(i) / center(i)) * 100;
 }
 exports.percent = percent;
+function list() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return args.reverse().reduce(function (prev, curr) { return cons(curr, prev); }, null);
+}
+exports.list = list;
+function printList(list) {
+    var output = '';
+    var current = list;
+    while (current !== null) {
+        output += car(current);
+        output += ' ';
+        current = cdr(current);
+    }
+    console.log("(" + output.slice(0, -1) + ")");
+}
+exports.printList = printList;

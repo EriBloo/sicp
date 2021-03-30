@@ -172,4 +172,6 @@ import * as chapterTwo from './chapterTwo';
   // console.log(chapterTwo.makeCenterPercent(10, 10));
 
   // console.log(chapterTwo.percent(chapterTwo.makeCenterWidth(10, 1)));
+
+  chapterTwo.printList(chapterTwo.list(1, 2, 3, 4));
 })();
